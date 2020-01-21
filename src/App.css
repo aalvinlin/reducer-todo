@@ -17,6 +17,7 @@ body {
 }
 
 .content {
+
     width: 100vw;
     height: 100vh;
 
@@ -24,12 +25,45 @@ body {
     justify-content: center;
     align-items: flex-start;
 
+    text-align: center;
 }
 
-.content h1 {
+.todoListContainer {
+    width: 600px;
+}
+
+h1 {
+    
     margin-top: 10vh;
+    margin-bottom: 5vh;
+
 }
 
 .listItem {
-    line-height: 4rem;
+    font-size: 2rem;
+    padding: 1rem;
+
+    width: 75%;
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+.listItem:nth-child(1) {
+    margin-top: 2rem;
+}
+
+
+.listItem:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.listItem:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+input, button {
+    font-size: 2rem;
+    padding: 1rem;
 }
