@@ -11,7 +11,7 @@ const ListItem = ( {item, completed, state, dispatch} ) => {
             </p>
 
             <p>
-                <button onClick={() => dispatch({ type: "DELETE_TASK", payload: item}) }>X</button>
+                <button onClick={(event) => { event.stopPropagation(); dispatch({ type: "DELETE_TASK", payload: item}) }}>X</button>
             </p>
 
         </div>

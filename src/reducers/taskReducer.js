@@ -37,6 +37,9 @@ const initialState = [
 ];
 
 const taskReducer = (state, action) => {
+
+    console.log("in taskReducer", state, action)
+
     switch (action.type)
     {
         case "ADD_TASK":
