@@ -38,21 +38,19 @@ const initialState = [
 
 const taskReducer = (state, action) => {
 
-    console.log("in taskReducer", state, action)
-
     switch (action.type)
     {
         case "ADD_TASK":
             return [ ...state, {item: action.payload, completed: false, id: Date.now()} ];
         
         case "DELETE_TASK":
-            return state.filter(item => item.id !== action.payload.id);
+            return state.filter(item => item.id !== action.payload);
             
         case "TOGGLE_COMPLETION_STATUS":
             return state.map(item => {
 
-                if (item.id === action.payload.id)
-                    { return { ...item, completed: true } }
+                if (item.id === action.payload)
+                    { return { ...item, completed: !item.completed } }
                 else
                     { return item }
             })

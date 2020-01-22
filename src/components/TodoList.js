@@ -28,7 +28,7 @@ const TodoList = ({state, dispatch}) => {
 
                 {state.map(task => (
 
-                    <ListItem item={task.item} completed={task.completed} key={"task" + task.id} state={state} dispatch={dispatch} />
+                    <ListItem key={"task" + task.id} item={task.item} completed={task.completed} id={task.id} state={state} dispatch={dispatch} />
                 ))}
 
             </div>

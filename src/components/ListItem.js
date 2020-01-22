@@ -1,17 +1,17 @@
 import React from "react";
 
-const ListItem = ( {item, completed, state, dispatch} ) => {
+const ListItem = ( {item, completed, id, state, dispatch} ) => {
 
     return (
         <div className={"listItem" + ((completed) ? " taskCompleted" : "")}
-            onClick={() => dispatch({ type: "TOGGLE_COMPLETION_STATUS", payload: item}) } >
+            onClick={() => dispatch({ type: "TOGGLE_COMPLETION_STATUS", payload: id}) } >
             
             <p>
                 { item } { completed ? " (completed)" : ""}
             </p>
 
             <p>
-                <button onClick={(event) => { event.stopPropagation(); dispatch({ type: "DELETE_TASK", payload: item}) }}>X</button>
+                <button onClick={(event) => { event.stopPropagation(); dispatch({ type: "DELETE_TASK", payload: id}) }}>X</button>
             </p>
 
         </div>
