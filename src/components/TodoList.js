@@ -20,8 +20,10 @@ const TodoList = ({state, dispatch}) => {
             <h1>Todo List</h1>
             <form name="todoList" onSubmit={handleSubmit}>
 
-                <input type="text" value={userInput} placeholder="New task" onChange={handleInput} />
+                <input type="text" value={userInput} placeholder="Type in a new task..." onChange={handleInput} />
                 <button onClick={() => dispatch({type: "ADD_TASK", payload: userInput})}>Add</button>
+                <br />
+                <button className="clearAll" onClick={() => dispatch({type: "DELETE_ALL_COMPLETED"})}>Remove all completed tasks</button>
             </form>
 
             <div className="listItems">

@@ -46,6 +46,7 @@ h1 {
     padding: 0 1rem;
 
     width: 75%;
+    min-height: 4rem;
     margin: 0 auto;
 
     text-align: left;
@@ -80,11 +81,33 @@ h1 {
 
 }
 
-input, button {
+form input, form button {
     font-size: 2rem;
     padding: 1rem;
 
     cursor: pointer;
+
+    background-color: #EEFFCC;
+    border: none;
+}
+
+input {
+    margin-right: 1rem;
+}
+
+form button {
+    color: #333333;
+}
+
+form input:active, form input:hover, form button:active, form button:hover {
+    background-color: #EEFFBB;
+}
+
+.clearAll {
+    width: 75%;
+    color: #666666;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 .listItem button {

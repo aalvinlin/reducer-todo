@@ -41,11 +41,18 @@ const taskReducer = (state, action) => {
     switch (action.type)
     {
         case "ADD_TASK":
+
+            if (action.payload.trim() === "")
+                { return state; }
+
             return [ ...state, {item: action.payload, completed: false, id: Date.now()} ];
         
         case "DELETE_TASK":
             return state.filter(item => item.id !== action.payload);
-            
+
+        case "DELETE_ALL_COMPLETED":
+            return state.filter(item => !item.completed);
+        
         case "TOGGLE_COMPLETION_STATUS":
             return state.map(item => {
 
