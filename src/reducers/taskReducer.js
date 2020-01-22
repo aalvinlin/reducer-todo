@@ -43,7 +43,7 @@ const taskReducer = (state, action) => {
     switch (action.type)
     {
         case "ADD_TASK":
-            return [ ...state, {item: action.payload.item, completed: false, id: Date.now()} ];
+            return [ ...state, {item: action.payload, completed: false, id: Date.now()} ];
         
         case "DELETE_TASK":
             return state.filter(item => item.id !== action.payload.id);

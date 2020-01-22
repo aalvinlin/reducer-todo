@@ -21,7 +21,7 @@ const TodoList = ({state, dispatch}) => {
             <form name="todoList" onSubmit={handleSubmit}>
 
                 <input type="text" value={userInput} placeholder="New task" onChange={handleInput} />
-                <button onClick={() => dispatch("ADD_TASK", userInput)}>Add</button>
+                <button onClick={() => dispatch({type: "ADD_TASK", payload: userInput})}>Add</button>
             </form>
 
             <div className="listItems">
