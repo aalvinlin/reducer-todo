@@ -26,7 +26,7 @@ const initialState = [
     },
     {
         item: 'Task 6',
-        completed: false,
+        completed: true,
         id: 96845231
     },
     {
@@ -39,6 +39,12 @@ const initialState = [
 const taskReducer = (state, action) => {
     switch (action.type)
     {
+        case "ADD_TASK":
+            return [ ...state, {item: action.payload.item, completed: false, id: Date.now()} ];
+        
+        case "DELETE_TASK":
+            return state.filter(item => item.id !== action.payload.id);
+            
         case "TOGGLE_COMPLETION_STATUS":
             return state.map(item => {
 
@@ -48,9 +54,6 @@ const taskReducer = (state, action) => {
                     { return item }
             })
 
-        case "DELETE_TASK":
-            return state.filter(item => item.id !== action.payload.id);
-        
         default:
             return state;
     }

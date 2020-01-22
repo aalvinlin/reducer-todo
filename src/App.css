@@ -47,6 +47,12 @@ h1 {
     margin: 0 auto;
 
     text-align: left;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .listItem:nth-child(1) {
@@ -63,7 +69,41 @@ h1 {
 }
 
 
+.taskCompleted {
+
+    color: #669966;
+    
+    font-size: 1rem;
+    line-height: 2rem;
+
+}
+
 input, button {
     font-size: 2rem;
     padding: 1rem;
+
+    cursor: pointer;
+}
+
+.listItem button {
+    background-color: #336600;
+    font-size: 1rem;
+    
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    color: #99CC99;
+    
+}
+
+.listItem button:hover, .listItem button:active {
+
+    color: white;
+    background-color: #447700;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ListItem from "./ListItem";
 
-const TodoList = ({state}) => {
+const TodoList = ({state, dispatch}) => {
 
     const [userInput, setUserInput] = useState("");
 
@@ -28,7 +28,7 @@ const TodoList = ({state}) => {
 
                 {state.map(task => (
 
-                    <ListItem item={task.item} completed={task.completed} key={"task" + task.id} />
+                    <ListItem item={task.item} completed={task.completed} key={"task" + task.id} state={state} dispatch={dispatch} />
                 ))}
 
             </div>

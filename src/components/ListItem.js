@@ -1,12 +1,19 @@
 import React from "react";
 
-const ListItem = ( {item, completed} ) => {
-
-    console.log(item, completed)
+const ListItem = ( {item, completed, state, dispatch} ) => {
 
     return (
-        <div className="listItem">
-            { item } { completed }
+        <div className={"listItem" + ((completed) ? " taskCompleted" : "")}
+            onClick={() => dispatch({ type: "TOGGLE_COMPLETION_STATUS", payload: item}) } >
+            
+            <p>
+                { item } { completed ? " (completed)" : ""}
+            </p>
+
+            <p>
+                <button onClick={() => dispatch({ type: "DELETE_TASK", payload: item}) }>X</button>
+            </p>
+
         </div>
     )
 }

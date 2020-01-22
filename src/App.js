@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="content">
 
-      <TodoList state={state} />
+      <TodoList state={state} dispatch={dispatch} />
     
     </div>
   )
