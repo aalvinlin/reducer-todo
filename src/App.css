@@ -42,7 +42,8 @@ h1 {
 
 .listItem {
     font-size: 2rem;
-    padding: 1rem;
+    line-height: 4rem;
+    padding: 0 1rem;
 
     width: 75%;
     margin: 0 auto;
@@ -75,7 +76,7 @@ h1 {
     color: #669966;
     
     font-size: 1rem;
-    line-height: 2rem;
+    line-height: 4rem;
 
 }
 
